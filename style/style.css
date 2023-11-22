@@ -296,24 +296,24 @@ body {
 /********** menu burger*********/
 
 /* Hide on bigger screens */
-.close-icon {
+.left-nav .fa-times {
     display: none;
-    font-size: 24px;
-}
-.menu-btn {
+    color: white;
+    font-size: 30px;
+    margin: 10px;
     cursor: pointer;
 }
-
+.left-nav .fa-bars {
+    font-size: 30px;
+    margin: 10px;
+    cursor: pointer;
+}
 @media (max-width: 768px) {
-    .menu-btn {
+    .left-nav .fa-bars {
         display: block;
     }
 
-    .left-nav li:nth-child(n + 3) {
+    .sub-menu li:not(:first-child) {
         display: none;
-    }
-
-    .close-icon {
-        display: block;
     }
 }

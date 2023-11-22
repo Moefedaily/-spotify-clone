@@ -1,11 +1,13 @@
-const menuBtn = document.querySelector('.menu-btn')
-const closeBtn = document.querySelector('.close-icon')
+const menuBtn = document.querySelector('.left-nav .fa-bars')
+const closeBtn = document.querySelector('.left-nav .fa-times')
 const leftMenu = document.querySelector('.left-menu')
-const leftNav = document.querySelector('.left-nav')
 const catalog = document.querySelector('.catalog')
+const subMenuItems = document.querySelectorAll('.sub-menu li:not(:first-child)')
+console.log(subMenuItems)
 
 function toggleMenu() {
     menuBtn.classList.toggle('open')
+    let currentMenuItem
 
     if (menuBtn.classList.contains('open')) {
         catalog.style.display = 'none'
@@ -13,15 +15,23 @@ function toggleMenu() {
         leftMenu.style.width = '100%'
         menuBtn.style.display = 'none'
         closeBtn.style.display = 'block'
+        subMenuItems.forEach(function (item) {
+            currentMenuItem = item
+            currentMenuItem.style.display = 'flex'
+        })
     } else {
         menuBtn.style.display = 'block'
         closeBtn.style.display = 'none'
-        leftNav.style.display = ''
+        subMenuItems.forEach(function (item) {
+            currentMenuItem = item
+            currentMenuItem.style.display = ''
+        })
         catalog.style.display = ''
         leftMenu.style.height = ''
     }
 }
 
-// Event listeners
 menuBtn.addEventListener('click', toggleMenu)
-document.querySelector('.close-icon').addEventListener('click', toggleMenu)
+document
+    .querySelector('.left-nav .fa-times')
+    .addEventListener('click', toggleMenu)
