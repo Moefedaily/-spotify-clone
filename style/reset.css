@@ -1,0 +1,12 @@
+body {
+    margin: O;
+}
+
+h2,
+h1,
+p,
+ul {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+}
